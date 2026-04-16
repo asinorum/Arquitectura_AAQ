@@ -27,7 +27,7 @@ La solución contempla:
 ## Arquitectura general
 
 ```mermaid
-***
+---
 config:
   theme: base
   themeVariables:
@@ -47,7 +47,7 @@ config:
     curve: basis
     nodeSpacing: 50
     rankSpacing: 80
-***
+---
 flowchart LR
 
     subgraph L1["NIVEL 1 — CAPTURA EN SITIOS REMOTOS"]
@@ -105,7 +105,7 @@ flowchart LR
 **Caso de uso:** alta densidad de video para vigilancia operacional y seguridad perimetral.
 
 ```mermaid
-***
+---
 config:
   theme: base
   themeVariables:
@@ -125,7 +125,7 @@ config:
     curve: basis
     nodeSpacing: 50
     rankSpacing: 80
-***
+---
 flowchart LR
 
     subgraph PLANTA["PLANTA DE PROCESOS"]
@@ -157,7 +157,7 @@ flowchart LR
 **Caso de uso:** vigilancia de largo alcance con soporte energético autónomo.
 
 ```mermaid
-***
+---
 config:
   theme: base
   themeVariables:
@@ -177,7 +177,7 @@ config:
     curve: basis
     nodeSpacing: 50
     rankSpacing: 80
-***
+---
 flowchart LR
 
     subgraph PRESA["PRESA DE RELAVE"]
@@ -212,7 +212,7 @@ flowchart LR
 **Caso de uso:** monitoreo de fibra LAF y correlación con alarmas de campo.
 
 ```mermaid
-***
+---
 config:
   theme: base
   themeVariables:
@@ -232,7 +232,7 @@ config:
     curve: basis
     nodeSpacing: 50
     rankSpacing: 80
-***
+---
 flowchart LR
 
     subgraph ECD["ESTACIÓN CAMBIO DE DIÁMETRO"]
@@ -285,13 +285,11 @@ Estos diagramas pueden usarse de tres maneras:
 2. Exportándolos a **SVG** o **PNG** para insertarlos en PowerPoint.
 3. Manteniendo el código fuente en el repositorio y una versión gráfica para propuestas comerciales.
 
-Para exportarlos como imagen, una ruta práctica es usar Mermaid Live Editor y descargar en SVG o PNG. [web:30][web:24]
+Para exportarlos como imagen, una ruta práctica es usar Mermaid Live Editor y descargar en SVG o PNG.
 
 ---
 
 ## Notas
 
-- Si alguna variante visual no se renderiza igual en GitHub, conviene exportar el diagrama como SVG e insertarlo como imagen en la presentación. [web:5][web:24]
-- Si quieres mantener edición simple, deja el código Mermaid en el repositorio y usa el SVG solo para la presentación final. [web:24]
-
----
+- Si alguna variante visual no se renderiza igual en GitHub, conviene exportar el diagrama como SVG e insertarlo como imagen en la presentación.
+- Si quieres mantener edición simple, deja el código Mermaid en el repositorio y usa el SVG solo para la presentación final.
