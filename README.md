@@ -19,6 +19,7 @@ La solución contempla:
   - [Planta de Procesos](#sitio-planta-de-procesos)
   - [Presa de Relave](#sitio-presa-de-relave)
   - [Estación Cambio de Diámetro](#sitio-estación-cambio-de-diámetro)
+  - [Estación Estándar](#sitio-estación-estándar-titire-vizcachas-pellute-etc)
 - [Convención visual](#convención-visual)
 - [Uso en presentaciones](#uso-en-presentaciones)
 
@@ -262,18 +263,73 @@ flowchart LR
 
 ---
 
+### Sitio: Estación Estándar (Titire, Vizcachas, Pellute, etc.)
+
+**Caso de uso:** vigilancia perimetral estándar con video, radar, control de acceso y sensor de cable perimetral.
+
+```mermaid
+---
+config:
+  theme: base
+  themeVariables:
+    background: "#FFFFFF"
+    primaryColor: "#EFF6FF"
+    primaryTextColor: "#1E3A5F"
+    primaryBorderColor: "#93C5FD"
+    lineColor: "#3B82F6"
+    secondaryColor: "#F0FDF4"
+    tertiaryColor: "#F8FAFC"
+    clusterBkg: "#F0F7FF"
+    clusterBorder: "#3B82F6"
+    fontFamily: "Segoe UI, Arial, sans-serif"
+    edgeLabelBackground: "#FFFFFF"
+    titleColor: "#1E3A5F"
+  flowchart:
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 80
+---
+flowchart LR
+
+    subgraph EST["ESTACIÓN ESTÁNDAR — Titire, Vizcachas, Pellute, etc."]
+        direction TB
+        V1["Domo PTZ 42X"]
+        V2["Cámara Bullet 2MP"]
+        D1["Radar de Intrusión"]
+        AC["Control Biométrico"]
+        CS["Cable Sensor<br/>Perimetral"]
+        S1["Switch"]
+
+        V1 & V2 & D1 & AC & CS --> S1
+    end
+
+    S1 ==> RADIO["Radioenlace"]
+    RADIO ==> CORE["Red Troncal AAQ"]
+
+    classDef sensor  fill:#DBEAFE,stroke:#2563EB,color:#1E3A5F,stroke-width:1.5px;
+    classDef network fill:#E0E7FF,stroke:#4F46E5,color:#1E1B4B,stroke-width:1.5px;
+    classDef ops     fill:#F0FDF4,stroke:#16A34A,color:#14532D,stroke-width:2px;
+    classDef core    fill:#EDE9FE,stroke:#7C3AED,color:#3B0764,stroke-width:2px;
+
+    class V1,V2,D1,CS sensor;
+    class S1,RADIO,CORE network;
+    class AC ops;
+```
+
+---
+
 ## Convención visual
 
 La documentación usa una convención de color unificada para facilitar lectura técnica y consistencia visual:
 
 | Clase | Color base | Uso |
 |---|---|---|
-| `sensor` | Azul claro | Cámaras, sensores, fibra |
+| `sensor` | Azul claro | Cámaras, sensores, fibra, cable perimetral |
 | `network` | Índigo claro | Switches, enlaces, red troncal |
 | `power` | Amarillo claro | Energía, solar, UPS |
 | `core` | Violeta claro | VMS, Core AAQ |
 | `storage` | Gris claro | Almacenamiento |
-| `ops` | Verde claro | Operación, alarmas, monitoreo |
+| `ops` | Verde claro | Operación, alarmas, control de acceso |
 
 ---
 
